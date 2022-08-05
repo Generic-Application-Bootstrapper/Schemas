@@ -1,0 +1,23 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+    <name>openapi-petstore-gen</name>
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>gen-petstore</groupId>
+    <artifactId>gen-petstore</artifactId>
+    <version>1.0.0</version>
+    <packaging>jar</packaging>
+
+    <parent>
+        <groupId>com.genericapp</groupId>
+        <artifactId>openapi-generators</artifactId>
+        <version>3.0.0</version>
+        <relativePath>../pom.xml</relativePath>
+    </parent>
+
+    <properties>
+        <openapi.inputSpec>petstore.yaml</openapi.inputSpec>
+        <openapi.generatorName>spring</openapi.generatorName>
+        <openapi.schemaName>petstore</openapi.schemaName>
+        <openapi.apiPackage>gen.petstore.api</openapi.apiPackage>
+        <openapi.modelPackage>gen.petstore.model</openapi.modelPackage>
+    </properties>
+</project>
