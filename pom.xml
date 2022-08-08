@@ -29,6 +29,10 @@
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
+            </plugin>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
                 <executions>
                     <execution>
                         <goals>
@@ -42,7 +46,7 @@
                 <artifactId>openapi-generator-maven-plugin</artifactId>
                 <version>3.0.0</version>
                 <executions>
-                     <execution>
+                    <execution>
                         <id>exec-install</id>
                         <phase>compile</phase>
                         <goals>
@@ -51,8 +55,8 @@
                         <configuration>
                             <inputSpec>${openapi.inputSpec}</inputSpec>
                             <generatorName>${openapi.generatorName}</generatorName>
-                            <apiPackage>gen.${openapi.schemaName}</apiPackage>
-                            <modelPackage>gen.${openapi.schemaName}</modelPackage>
+                            <apiPackage>gen.${openapi.schemaName}.api</apiPackage>
+                            <modelPackage>gen.${openapi.schemaName}.model</modelPackage>
                             <output>../../</output>
 
                             <configOptions>
@@ -64,24 +68,24 @@
                 </executions>
             </plugin>
             <plugin>
-              <artifactId>maven-clean-plugin</artifactId>
-              <version>2.5</version>
-              <executions>
-                <execution>
-                  <id>auto-clean</id>
-                  <phase>clean</phase>
-                  <goals>
-                    <goal>clean</goal>
-                  </goals>
-                  <configuration>
-                   <filesets>
-                      <fileset>
-                        <directory>../../src/main/java/gen/${openapi.schemaName}</directory>
-                      </fileset>
-                    </filesets>
-                  </configuration>
-                </execution>
-              </executions>
+                <artifactId>maven-clean-plugin</artifactId>
+                <version>2.5</version>
+                <executions>
+                    <execution>
+                        <id>auto-clean</id>
+                        <phase>clean</phase>
+                        <goals>
+                            <goal>clean</goal>
+                        </goals>
+                        <configuration>
+                            <filesets>
+                                <fileset>
+                                    <directory>../../src/main/java/gen/${openapi.schemaName}</directory>
+                                </fileset>
+                            </filesets>
+                        </configuration>
+                    </execution>
+                </executions>
             </plugin>
         </plugins>
     </build>
@@ -136,10 +140,24 @@
             <groupId>com.fasterxml.jackson.datatype</groupId>
             <artifactId>jackson-datatype-jsr310</artifactId>
         </dependency>
-    <!-- Bean Validation API support -->
+        <!-- Bean Validation API support -->
         <dependency>
             <groupId>javax.validation</groupId>
             <artifactId>validation-api</artifactId>
         </dependency>
+
+        <!-- To Be added to Root pom -->
+        <dependency>
+            <groupId>javax.xml.bind</groupId>
+            <artifactId>jaxb-api</artifactId>
+            <version>2.2.12</version>
+        </dependency>
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>3.8.1</version>
+            <scope>test</scope>
+        </dependency>
+
     </dependencies>
 </project>

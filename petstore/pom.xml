@@ -6,6 +6,7 @@
     <version>1.0.0</version>
     <packaging>jar</packaging>
 
+
     <parent>
         <groupId>com.genericapp</groupId>
         <artifactId>openapi-generators</artifactId>
@@ -19,5 +20,7 @@
         <openapi.schemaName>petstore</openapi.schemaName>
         <openapi.apiPackage>gen.petstore.api</openapi.apiPackage>
         <openapi.modelPackage>gen.petstore.model</openapi.modelPackage>
+
+        <start-class>com.entry.springboot.Application</start-class>
     </properties>
 </project>
