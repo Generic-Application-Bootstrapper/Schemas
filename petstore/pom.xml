@@ -18,9 +18,6 @@
         <openapi.inputSpec>petstore.yaml</openapi.inputSpec>
         <openapi.generatorName>spring</openapi.generatorName>
         <openapi.schemaName>petstore</openapi.schemaName>
-        <openapi.apiPackage>gen.petstore.api</openapi.apiPackage>
-        <openapi.modelPackage>gen.petstore.model</openapi.modelPackage>
 
-        <start-class>com.entry.springboot.Application</start-class>
     </properties>
 </project>
