@@ -12,9 +12,9 @@
         <maven.compiler.source>${java.version}</maven.compiler.source>
         <maven.compiler.target>${java.version}</maven.compiler.target>
         <!-- Overriden Properties -->
-        <openapi.inputSpec>To Be Overriden</openapi.inputSpec>
-        <openapi.generatorName>To Be Overriden</openapi.generatorName>
-        <openapi.schemaName>To Be Overriden</openapi.schemaName>
+        <openapi.inputSpec>To Be Overridden</openapi.inputSpec>
+        <openapi.generatorName>To Be Overridden</openapi.generatorName>
+        <openapi.schemaName>To Be Overridden</openapi.schemaName>
     </properties>
 
     <parent>
