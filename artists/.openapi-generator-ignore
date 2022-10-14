@@ -1,0 +1,5 @@
+docs/README.md
+README.md
+application.properties
+.openapi-generator-ignore
+src/main/java/com/\*\*/\*.java
