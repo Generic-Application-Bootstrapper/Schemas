@@ -19,5 +19,6 @@
         <openapi.generatorName>spring</openapi.generatorName>
         <openapi.schemaName>petstore</openapi.schemaName>
 
+        <java.version>11</java.version>
     </properties>
 </project>

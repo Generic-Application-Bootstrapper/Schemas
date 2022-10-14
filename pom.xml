@@ -8,7 +8,7 @@
 
     <name>openapi-petstore</name>
     <properties>
-        <java.version>1.12</java.version>
+        <java.version>11</java.version>
         <maven.compiler.source>${java.version}</maven.compiler.source>
         <maven.compiler.target>${java.version}</maven.compiler.target>
         <!-- Overriden Properties -->
@@ -29,10 +29,6 @@
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
-            </plugin>
-            <plugin>
-                <groupId>org.springframework.boot</groupId>
-                <artifactId>spring-boot-maven-plugin</artifactId>
                 <executions>
                     <execution>
                         <goals>
@@ -44,7 +40,7 @@
             <plugin>
                 <groupId>org.openapitools</groupId>
                 <artifactId>openapi-generator-maven-plugin</artifactId>
-                <version>3.0.0</version>
+                <version>6.2.0</version>
                 <executions>
                     <execution>
                         <id>exec-install</id>
@@ -53,6 +49,7 @@
                             <goal>generate</goal>
                         </goals>
                         <configuration>
+                            <java11>true</java11>
                             <inputSpec>${openapi.inputSpec}</inputSpec>
                             <generatorName>${openapi.generatorName}</generatorName>
                             <apiPackage>gen.${openapi.schemaName}.api</apiPackage>
@@ -148,15 +145,26 @@
 
         <!-- To Be added to Root pom -->
         <dependency>
-            <groupId>javax.xml.bind</groupId>
-            <artifactId>jaxb-api</artifactId>
-            <version>2.2.12</version>
+            <groupId>jakarta.xml.bind</groupId>
+            <artifactId>jakarta.xml.bind-api</artifactId>
+            <version>4.0.0</version>
+        </dependency>
+        <dependency>
+            <groupId>com.sun.xml.bind</groupId>
+            <artifactId>jaxb-impl</artifactId>
+            <version>4.0.0</version>
+            <scope>runtime</scope>
         </dependency>
         <dependency>
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
             <version>3.8.1</version>
             <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>io.springfox</groupId>
+            <artifactId>springfox-swagger2</artifactId>
+            <version>3.0.0</version>
         </dependency>
 
     </dependencies>
